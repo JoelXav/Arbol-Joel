@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árbol de Joel Pasquel</title>
+</head>
+<body>
+    <h1>Árbol de Joel Pasquel, plantado el sábado 14 de diciembre del 2024, edad: <span id="edad"></span></h1>
+
+    <script>
+        // Fecha de plantación
+        const fechaPlantacion = new Date('2024-12-14');
+
+        // Función para actualizar la edad
+        function actualizarEdad() {
+            const hoy = new Date();
+            const diferenciaTiempo = hoy - fechaPlantacion;
+            const diferenciaDias = Math.floor(diferenciaTiempo / (1000 * 60 * 60 * 24));
+            document.getElementById('edad').textContent = `${diferenciaDias} días`;
+        }
+
+        // Actualiza la edad al cargar la página
+        actualizarEdad();
+
+        // Actualiza la edad cada día
+        setInterval(actualizarEdad, 24 * 60 * 60 * 1000);
+    </script>
+</body>
+</html>
